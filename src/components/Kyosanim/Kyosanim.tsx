@@ -1,6 +1,6 @@
 function Kyosanim() {
   return (
-    <section id="sensei" className="py-16 bg-white">
+    <section id="sensei" className="py-16 bg-red-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:flex lg:items-top lg:space-x-8">
           <div className="lg:w-1/2">

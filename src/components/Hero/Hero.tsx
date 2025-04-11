@@ -1,6 +1,6 @@
 function Hero() {
   return (
-    <section className="py-16">
+    <section id="hero" className="py-16">
       <div className="absolute inset-0">
         <img
           className="w-full h-[600px] object-cover"

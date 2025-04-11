@@ -33,7 +33,7 @@ function Schedule() {
   ];
 
   return (
-    <section id="schedule" className="py-16 bg-white">
+    <section id="schedule" className="py-16 bg-red-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
           <Clock className="mx-auto h-12 w-12 text-red-600" />
