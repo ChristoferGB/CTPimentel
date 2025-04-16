@@ -41,6 +41,9 @@ function Navigation() {
             <a href="#schedule" className="text-gray-300 hover:text-red-600">
               Horários
             </a>
+            <a href="#affiliates" className="text-gray-300 hover:text-red-600">
+              Afiliados
+            </a>
             <a href="#location" className="text-gray-300 hover:text-red-600">
               Localização
             </a>
@@ -81,6 +84,13 @@ function Navigation() {
               onClick={() => setIsMenuOpen(false)}
             >
               Horários
+            </a>
+            <a
+              href="#affiliates"
+              className="block px-3 py-2 text-gray-300 hover:text-red-600"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Afiliados
             </a>
             <a
               href="#location"
