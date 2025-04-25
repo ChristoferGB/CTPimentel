@@ -1,7 +1,28 @@
-import { UserRound } from "lucide-react";
+import { useEffect, useState } from "react";
+import { UserRound, Search } from "lucide-react";
 import { affiliatesData, AffiliatesData } from "./affiliates-data";
+import "./styles.css";
 
 function Affiliates() {
+  const [affiliates, setAffiliates] = useState(affiliatesData);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const normalizeData = (data: AffiliatesData[]) => {
+    const orderedData = [...data].sort((a, b) => (a.name > b.name ? 1 : -1));
+    setAffiliates(orderedData);
+  };
+
+  const handleSearch = (input: string) => {
+    let filteredData = affiliatesData.filter((x) =>
+      x.name.toLowerCase().startsWith(input.toLowerCase())
+    );
+    normalizeData(filteredData);
+  };
+
+  useEffect(() => {
+    normalizeData(affiliatesData);
+  }, []);
+
   return (
     <section id="affiliates" className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -9,8 +30,23 @@ function Affiliates() {
           <UserRound className="mx-auto h-12 w-12 text-red-600" />
           <h2 className="mt-4 text-3xl font-bold text-gray-900">Afiliados</h2>
         </div>
-        <div className="p-4">
-          <h1 className="text-xl font-bold mb-4">User List</h1>
+        <div className="input-wrapper">
+          <input
+            className="text-xl border p-1"
+            type="text"
+            placeholder="Pesquisar..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            onSubmit={() => handleSearch(searchTerm)}
+          />
+          <button>
+            <Search
+              className="search-icon"
+              onClick={() => handleSearch(searchTerm)}
+            />
+          </button>
+        </div>
+        <div className="">
           <table className="min-w-full border border-gray-300">
             <thead className="text-xl">
               <tr className="bg-gray-100">
@@ -21,7 +57,7 @@ function Affiliates() {
               </tr>
             </thead>
             <tbody className="text-lg">
-              {affiliatesData.map((data: AffiliatesData) => (
+              {affiliates.map((data: AffiliatesData) => (
                 <tr key={data.id}>
                   <td className="px-4 py-2 border-y">{data.id}</td>
                   <td className="px-4 py-2 border-y">{data.name}</td>

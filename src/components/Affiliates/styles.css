@@ -1,0 +1,9 @@
+.input-wrapper {
+  margin: 2rem 0;
+  display: flex;
+}
+
+.search-icon {
+  height: 100%;
+  transform: translateX(-30px);
+}
