@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { UserRound, Search } from "lucide-react";
 import { affiliatesData, AffiliatesData } from "./affiliates-data";
 import "./styles.css";
+import Pagination from "../../utils/Pagination/Pagination";
 
 function Affiliates() {
   const [affiliates, setAffiliates] = useState(affiliatesData);
@@ -46,7 +47,7 @@ function Affiliates() {
             />
           </button>
         </div>
-        <div className="">
+        <div className="table-wrapper">
           <table className="min-w-full border border-gray-300">
             <thead className="text-xl">
               <tr className="bg-gray-100">
@@ -71,10 +72,13 @@ function Affiliates() {
               ))}
             </tbody>
           </table>
+          <Pagination />
         </div>
       </div>
     </section>
   );
 }
+
+//Ajustar tamanho do texto da tabela e paddings do site inteiro para dimensões pequenas
 
 export default Affiliates;
