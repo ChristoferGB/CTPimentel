@@ -72,7 +72,7 @@ function Affiliates() {
               ))}
             </tbody>
           </table>
-          <Pagination />
+          <Pagination data={affiliates} handlePagination={normalizeData}/>
         </div>
       </div>
     </section>
