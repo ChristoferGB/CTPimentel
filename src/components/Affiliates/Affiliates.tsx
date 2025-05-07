@@ -6,6 +6,7 @@ import Pagination from "../../utils/Pagination/Pagination";
 
 function Affiliates() {
   const [affiliates, setAffiliates] = useState(affiliatesData);
+  const [affiliatesPage, setAffiliatesPage] = useState([] as AffiliatesData[]);
   const [searchTerm, setSearchTerm] = useState("");
 
   const normalizeData = (data: AffiliatesData[]) => {
@@ -72,7 +73,7 @@ function Affiliates() {
               ))}
             </tbody>
           </table>
-          <Pagination data={affiliates} handlePagination={normalizeData}/>
+          <Pagination data={affiliates} handlePagination={setAffiliatesPage}/>
         </div>
       </div>
     </section>
