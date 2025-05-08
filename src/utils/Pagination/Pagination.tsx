@@ -5,6 +5,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { useEffect, useState } from "react";
+import "./styles.css";
 
 const Pagination: React.FC<{
   data: any[];
@@ -36,11 +37,11 @@ const Pagination: React.FC<{
         break;
       case "previous":
         var oldCurrentPage = currentPage;
-        setCurrentPage(oldCurrentPage--);
+        setCurrentPage(--oldCurrentPage);
         break;
       case "next":
         var oldCurrentPage = currentPage;
-        setCurrentPage(oldCurrentPage++);
+        setCurrentPage(++oldCurrentPage);
         break;
       case "last":
         setCurrentPage(numberOfPages);
@@ -59,9 +60,25 @@ const Pagination: React.FC<{
   }, [numberOfLines]);
 
   useEffect(() => {
-    if (currentPage === 1) setIsFirstPage(true);
-    else if (currentPage === numberOfPages) setIsLastPage(true);
+    if (currentPage === 1) {
+      setIsFirstPage(true);
+      setIsLastPage(false);
+      return;
+    }
+
+    if (currentPage === numberOfPages) {
+      setIsLastPage(true);
+      setIsFirstPage(false);
+      return;
+    }
+
+    setIsFirstPage(false);
+    setIsLastPage(false);
   }, [currentPage]);
+
+  useEffect(() => {
+    //lógica da alteração dos dados
+  }, [numberOfLines, currentPage])
 
   return (
     <div className="flex flex-row justify-end p-4 gap-12">
@@ -79,14 +96,14 @@ const Pagination: React.FC<{
       </div>
       <div className="flex flex-row">
         <button
-          className="border border-gray-400 rounded-full mx-1"
+          className="btn-pagination border border-gray-400 rounded-full mx-1"
           onClick={() => handlePageChange("first")}
           disabled={isFirstPage}
         >
           <ChevronFirst />
         </button>
         <button
-          className="border border-gray-400 rounded-full mx-1"
+          className="btn-pagination border border-gray-400 rounded-full mx-1"
           onClick={() => handlePageChange("previous")}
           disabled={isFirstPage}
         >
@@ -96,14 +113,14 @@ const Pagination: React.FC<{
           {currentPage} de {numberOfPages}
         </span>
         <button
-          className="border border-gray-400 rounded-full mx-1"
+          className="btn-pagination border border-gray-400 rounded-full mx-1"
           onClick={() => handlePageChange("next")}
           disabled={isLastPage}
         >
           <ChevronRight />
         </button>
         <button
-          className="border border-gray-400 rounded-full mx-1"
+          className="btn-pagination border border-gray-400 rounded-full mx-1"
           onClick={() => handlePageChange("last")}
           disabled={isLastPage}
         >
