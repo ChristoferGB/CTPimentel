@@ -59,7 +59,7 @@ function Affiliates() {
               </tr>
             </thead>
             <tbody className="text-lg">
-              {affiliates.map((data: AffiliatesData) => (
+              {affiliatesPage.map((data: AffiliatesData) => (
                 <tr key={data.id}>
                   <td className="px-4 py-2 border-y">{data.id}</td>
                   <td className="px-4 py-2 border-y">{data.name}</td>

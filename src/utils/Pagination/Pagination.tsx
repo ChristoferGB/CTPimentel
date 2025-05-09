@@ -54,12 +54,19 @@ const Pagination: React.FC<{
 
   useEffect(() => {
     let pages = Math.ceil(data.length / Number(numberOfLines));
-    pages = pages < 0 ? 1 : pages;
+    pages = pages <= 0 ? 1 : pages;
+
     setNumberOfPages(pages);
     setCurrentPage(1);
-  }, [numberOfLines]);
+    setIsFirstPage(true);
+
+    if (pages === 1) setIsLastPage(true);
+    else setIsLastPage(false);
+  }, [numberOfLines, data]);
 
   useEffect(() => {
+    console.log(currentPage);
+    console.log(numberOfPages);
     if (currentPage === 1) {
       setIsFirstPage(true);
       setIsLastPage(false);
@@ -68,17 +75,25 @@ const Pagination: React.FC<{
 
     if (currentPage === numberOfPages) {
       setIsLastPage(true);
-      setIsFirstPage(false);
+      if(numberOfPages === 1) setIsFirstPage(true);
+      else setIsFirstPage(false);
       return;
     }
 
     setIsFirstPage(false);
     setIsLastPage(false);
-  }, [currentPage]);
+  }, [currentPage, numberOfPages]);
 
   useEffect(() => {
-    //lógica da alteração dos dados
-  }, [numberOfLines, currentPage])
+    let intNumberOfLines = Number(numberOfLines);
+    if (intNumberOfLines === -1)
+      intNumberOfLines = Math.max(...numberOfLinesOptions.map((x) => x.value));
+    const beginning = intNumberOfLines * (currentPage - 1);
+    const end = beginning + intNumberOfLines;
+    const currentPageData = data.slice(beginning, end);
+
+    handlePagination(currentPageData);
+  }, [numberOfLines, currentPage, data]);
 
   return (
     <div className="flex flex-row justify-end p-4 gap-12">
