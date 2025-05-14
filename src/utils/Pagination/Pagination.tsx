@@ -67,16 +67,16 @@ const Pagination: React.FC<{
   useEffect(() => {
     console.log(currentPage);
     console.log(numberOfPages);
-    if (currentPage === 1) {
-      setIsFirstPage(true);
-      setIsLastPage(false);
-      return;
-    }
-
     if (currentPage === numberOfPages) {
       setIsLastPage(true);
       if(numberOfPages === 1) setIsFirstPage(true);
       else setIsFirstPage(false);
+      return;
+    }
+    
+    if (currentPage === 1) {
+      setIsFirstPage(true);
+      setIsLastPage(false);
       return;
     }
 
