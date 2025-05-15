@@ -50,23 +50,23 @@ function Affiliates() {
         </div>
         <div className="table-wrapper">
           <table className="min-w-full border border-gray-300">
-            <thead className="text-xl">
+            <thead className="text-sm sm:text-md md:text-lg lg:text-xl">
               <tr className="bg-gray-100">
-                <th className="px-4 py-2 border-y"></th>
-                <th className="px-4 py-2 border-y text-left">Nome</th>
-                <th className="px-4 py-2 border-y">Graduação</th>
-                <th className="px-4 py-2 border-y">Ano de Nascimento</th>
+                <th className="px-1 sm:px-2 md:px-3 lg:px-4 py-2 border-y"></th>
+                <th className="px-1 sm:px-2 md:px-3 lg:px-4 py-2 border-y text-left">Nome</th>
+                <th className="px-1 sm:px-2 md:px-3 lg:px-4 py-2 border-y">Graduação</th>
+                <th className="px-1 sm:px-2 md:px-3 lg:px-4 py-2 border-y">Ano de Nascimento</th>
               </tr>
             </thead>
-            <tbody className="text-lg">
+            <tbody className="text-sm sm:text-md md:text-lg lg:text-xl">
               {affiliatesPage.map((data: AffiliatesData) => (
                 <tr key={data.id}>
-                  <td className="px-4 py-2 border-y">{data.id}</td>
-                  <td className="px-4 py-2 border-y">{data.name}</td>
-                  <td className="px-4 py-2 border-y text-center">
+                  <td className="px-1 sm:px-2 md:px-3 lg:px-4 py-2 border-y">{data.id}</td>
+                  <td className="px-1 sm:px-2 md:px-3 lg:px-4 py-2 border-y">{data.name}</td>
+                  <td className="px-1 sm:px-2 md:px-3 lg:px-4 py-2 border-y text-center">
                     {data.graduation}
                   </td>
-                  <td className="px-4 py-2 border-y text-center">
+                  <td className="px-1 sm:px-2 md:px-3 lg:px-4 py-2 border-y text-center">
                     {data.yearOfBirth}
                   </td>
                 </tr>

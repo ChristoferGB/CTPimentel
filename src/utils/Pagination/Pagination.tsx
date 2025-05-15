@@ -96,8 +96,8 @@ const Pagination: React.FC<{
   }, [numberOfLines, currentPage, data]);
 
   return (
-    <div className="flex flex-row justify-end p-4 gap-12">
-      <div>
+    <div className="flex flex-row justify-end p-2 lg:p-4 gap-12">
+      <div className="text-xs sm:text-sm md:text-md lg:text-lg">
         <span>Linhas por página: </span>
         <select
           className="border border-gray-400 rounded"
@@ -124,7 +124,7 @@ const Pagination: React.FC<{
         >
           <ChevronLeft />
         </button>
-        <span>
+        <span className="text-xs sm:text-sm md:text-md lg:text-lg">
           {currentPage} de {numberOfPages}
         </span>
         <button
