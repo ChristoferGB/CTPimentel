@@ -13,8 +13,8 @@ function Contact() {
             <h3 className="text-xl font-semibold mb-4">
               Entre em contato conosco
             </h3>
-            <p>Tel: (555) 123-4567</p>
-            <p>E-mail: info@dragonspirittkd.com</p>
+            <p>Tel: (27) 99286-7149</p>
+            <p>E-mail: tkdteampimentel@gmail.com</p>
           </div>
           <div>
             <h3 className="text-xl font-semibold mb-4">Siga-nos</h3>
@@ -22,7 +22,7 @@ function Contact() {
               <a href="#" className="hover:text-red-600">
                 <Facebook className="h-6 w-6" />
               </a>
-              <a href="#" className="hover:text-red-600">
+              <a href="https://www.instagram.com/ctpimenteltaekwondo?igsh=cWMzdGVodjM4djI2" className="hover:text-red-600">
                 <Instagram className="h-6 w-6" />
               </a>
             </div>
