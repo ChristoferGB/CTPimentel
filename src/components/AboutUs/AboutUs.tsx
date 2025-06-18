@@ -5,11 +5,12 @@ function AboutUs() {
         <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
           Nossa História
         </h2>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Founded in 1985, Dragon Spirit Taekwondo has been a cornerstone of
-          martial arts excellence in our community. For over three decades, we
-          have trained thousands of students in the art of Taekwondo, fostering
-          discipline, respect, and personal growth.
+        <p className="text-lg text-gray-600 max-w-3xl mx-auto text-justify">
+          Somos uma academia de artes marciais, totalmente voltada a prática do
+          Taekwondo, com aulas iniciais e avançadas, tanto no âmbito marcial,
+          quanto no competitivo. Temos treinado diversos alunos de várias faixas
+          etárias, com o propósito de construir atletas com caráter, respeito,
+          honra e ética.
         </p>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Phone } from "lucide-react";
+import { MessageCircle, Instagram, Phone } from "lucide-react";
 
 function Contact() {
   return (
@@ -17,10 +17,12 @@ function Contact() {
             <p>E-mail: tkdteampimentel@gmail.com</p>
           </div>
           <div>
-            <h3 className="text-xl font-semibold mb-4">Siga-nos</h3>
+            <div className="flex justify-center md:justify-start">
+              <h3 className="text-xl font-semibold mb-4">Siga-nos</h3>
+            </div>
             <div className="flex space-x-4 justify-center md:justify-start">
-              <a href="#" className="hover:text-red-600">
-                <Facebook className="h-6 w-6" />
+              <a href="http://api.whatsapp.com/send?phone=27997228180" className="hover:text-red-600">
+                <MessageCircle className="h-6 w-6" />
               </a>
               <a href="https://www.instagram.com/ctpimenteltaekwondo?igsh=cWMzdGVodjM4djI2" className="hover:text-red-600">
                 <Instagram className="h-6 w-6" />

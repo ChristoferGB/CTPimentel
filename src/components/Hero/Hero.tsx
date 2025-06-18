@@ -4,8 +4,8 @@ function Hero() {
       <div className="absolute inset-0">
         <img
           className="w-full h-[600px] object-cover"
-          src="https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&q=80"
-          alt="Taekwondo Practice"
+          src="images/hero.jpg"
+          alt="Equipe CT Pimentel Taekwondo"
         />
         <div className="absolute inset-0 h-[600px] bg-black opacity-60"></div>
       </div>
@@ -14,8 +14,9 @@ function Hero() {
           CT Pimentel Taekwondo
         </h1>
         <p className="mt-6 text-xl text-gray-300 max-w-3xl">
-          Join our community and discover the path of discipline, respect, and
-          self-improvement through traditional Korean martial arts.
+          Junte-se a nós e descubra o caminho da disciplina, respeito e
+          aperfeiçoamento por meio do Taekwondo, uma tradicional arte marcial
+          Coreana.
         </p>
       </div>
     </section>

@@ -11,7 +11,7 @@ function Navigation() {
           <a href="#hero" className="flex items-center">
             <img
               className="h-10 w-10"
-              src="images/Logo.png"
+              src="images/logo.png"
               alt="Logo da Academia"
             />
             <span className="ml-2 text-white font-bold text-xl">

@@ -6,7 +6,7 @@ function Footer() {
         <div className="flex flex-row md:flex-col items-center justify-center gap-1 md:gap-2">
           <span>Desenvolvido por</span>
           <img
-            src="images/Logo C&P.png"
+            src="images/logo_C&P.png"
             alt="C&P Logo"
             width={150}
             height={50}

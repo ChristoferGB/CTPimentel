@@ -7,28 +7,40 @@ function Schedule() {
       events: [
         "18:30 - Turma infantil (até 6 anos)",
         "19:30 - Turma geral",
-        "20:30 - Kickboxing",
+        "20:30 - Turma geral",
       ],
     },
     {
       day: "Terça-feira",
-      events: ["19:30 - Turma geral"],
+      events: [
+        "18:30 - Turma infantil (até 6 anos)",
+        "19:30 - Turma geral",
+        "20:30 - Turma geral",
+      ],
     },
     {
       day: "Quarta-feira",
       events: [
         "18:30 - Turma infantil (até 6 anos)",
         "19:30 - Projeto social",
-        "20:30 - Kickboxing",
+        "20:30 - Turma geral",
       ],
     },
     {
       day: "Quinta-feira",
-      events: ["19:30 - Turma geral"],
+      events: [
+        "18:30 - Turma infantil (até 6 anos)",
+        "19:30 - Turma geral",
+        "20:30 - Turma geral",
+      ],
     },
     {
       day: "Sexta-feira",
-      events: ["18:30 - Turma infantil (até 6 anos)", "20:30 - Kickboxing"],
+      events: [
+        "18:30 - Turma infantil (até 6 anos)",
+        "19:30 - Turma geral",
+        "20:30 - Turma geral",
+      ],
     },
   ];
 
