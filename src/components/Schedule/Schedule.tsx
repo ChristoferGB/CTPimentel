@@ -59,7 +59,7 @@ function Schedule() {
               <h3 className="text-xl font-semibold mb-4">{d.day}</h3>
               <ul className="space-y-2">
                 {d.events.map((e) => (
-                  <li>{e}</li>
+                  <li key={e}>{e}</li>
                 ))}
               </ul>
             </div>

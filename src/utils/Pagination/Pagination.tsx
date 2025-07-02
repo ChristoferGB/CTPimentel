@@ -65,8 +65,6 @@ const Pagination: React.FC<{
   }, [numberOfLines, data]);
 
   useEffect(() => {
-    console.log(currentPage);
-    console.log(numberOfPages);
     if (currentPage === numberOfPages) {
       setIsLastPage(true);
       if(numberOfPages === 1) setIsFirstPage(true);
@@ -105,7 +103,7 @@ const Pagination: React.FC<{
           onChange={(e) => handleSelectionChange(e.target.value)}
         >
           {numberOfLinesOptions.map((n) => (
-            <option value={n.value}>{n.text}</option>
+            <option key={n.value} value={n.value}>{n.text}</option>
           ))}
         </select>
       </div>

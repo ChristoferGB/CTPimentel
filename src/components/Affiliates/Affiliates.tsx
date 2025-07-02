@@ -1,13 +1,20 @@
 import { useEffect, useState } from "react";
 import { UserRound, Search } from "lucide-react";
-import { affiliatesData, AffiliatesData } from "./affiliates-data";
+import { AffiliatesData } from "./affiliates-data";
+import axios from "axios";
 import "./styles.css";
 import Pagination from "../../utils/Pagination/Pagination";
 
 function Affiliates() {
-  const [affiliates, setAffiliates] = useState(affiliatesData);
+  const [affiliatesData, setAffiliatesData] = useState([] as AffiliatesData[]);
+  const [affiliates, setAffiliates] = useState([] as AffiliatesData[]);
   const [affiliatesPage, setAffiliatesPage] = useState([] as AffiliatesData[]);
   const [searchTerm, setSearchTerm] = useState("");
+
+  const getAffiliatesData = async (): Promise<AffiliatesData[]> => {
+    const response = await axios.get('https://raw.githubusercontent.com/ChristoferGB/CTPimentel-Affiliates/refs/heads/master/ct-affiliates.json')
+    return response.data;
+  }
 
   const normalizeData = (data: AffiliatesData[]) => {
     const orderedData = [...data].sort((a, b) => (a.name > b.name ? 1 : -1));
@@ -22,8 +29,15 @@ function Affiliates() {
   };
 
   useEffect(() => {
-    normalizeData(affiliatesData);
-  }, []);
+  const fetchData = async () => {
+    const data = await getAffiliatesData();
+    setAffiliatesData(data);
+    normalizeData(data);
+  };
+
+  fetchData();
+}, []);
+
 
   return (
     <section id="affiliates" className="py-16 bg-gray-50">
@@ -79,7 +93,5 @@ function Affiliates() {
     </section>
   );
 }
-
-//Ajustar tamanho do texto da tabela e paddings do site inteiro para dimensões pequenas
 
 export default Affiliates;
